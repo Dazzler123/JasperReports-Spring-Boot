@@ -6,7 +6,7 @@
  */
 package lk.dazzler.devo.java.spring.jasper.reports.controller;
 
-import lk.dazzler.devo.java.spring.jasper.reports.service.ReportService;
+import lk.dazzler.devo.java.spring.jasper.reports.service.ReportServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReportController {
 
     @Autowired
-    ReportService service;
+    ReportServiceImpl service;
 
     @GetMapping("/generate")
     public ResponseEntity<byte[]> generateReport() {

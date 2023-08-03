@@ -33,6 +33,10 @@ public class ReportServiceImpl implements ReportService{
         // Add data to the report (if needed)
         Map<String, Object> params = new HashMap<>();
         // Add parameters if needed
+        params.put("id",dto.getId());
+        params.put("name",dto.getName());
+        params.put("age",dto.getAge());
+        params.put("address",dto.getAddress());
 
         // Generate the report using the JasperReport and data
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());

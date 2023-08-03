@@ -6,6 +6,7 @@
  */
 package lk.dazzler.devo.java.spring.jasper.reports.service;
 
+import lk.dazzler.devo.java.spring.jasper.reports.dto.CustomerDTO;
 import net.sf.jasperreports.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -22,7 +23,7 @@ public class ReportServiceImpl implements ReportService{
     @Autowired
     private ResourceLoader resourceLoader;
 
-    public byte[] generateReport() throws JRException, IOException {
+    public byte[] generateReport(CustomerDTO dto) throws JRException, IOException {
         // Load the JRXML file
         Resource resource = resourceLoader.getResource("classpath:WelcomeReport.jrxml");
 

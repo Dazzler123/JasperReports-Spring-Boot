@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class ReportServiceImpl {
+public class ReportServiceImpl implements ReportService{
 
     @Autowired
     private ResourceLoader resourceLoader;
@@ -37,8 +37,6 @@ public class ReportServiceImpl {
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
 
         // Export the report to a byte array (PDF, XLS, etc.)
-        byte[] reportBytes = JasperExportManager.exportReportToPdf(jasperPrint);
-
-        return reportBytes;
+        return JasperExportManager.exportReportToPdf(jasperPrint);
     }
 }
